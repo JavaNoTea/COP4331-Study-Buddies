@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Header from './Header';
+import Offer from './home/Offer';
+import StudyRooms from './home/StudyRooms';
+import Reviews from './home/Reviews';
+import Cta from './login_register/Cta';
+import Footer from './Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <Offer></Offer>
+    <StudyRooms></StudyRooms>
+    <Reviews></Reviews>
+    <Cta></Cta>
+    <Footer></Footer>
   </React.StrictMode>
 );
 
