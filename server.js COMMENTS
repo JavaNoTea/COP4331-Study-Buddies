@@ -58,10 +58,10 @@ app.post('/api/login', async (req, res, next) => 
 app.post('/api/register', async (req, res, next) =>
 {
 
-  // missing: major & email to match database *** FIX ME ***
+  // missing: major, email, & phone to match database *** FIX ME ***
   const { firstName, lastName, username, password} = req.body;
 
-  // missing: major & email to match database *** FIX ME ***
+  // missing: major, email, & phone to match database *** FIX ME ***
   const newUser = {firstName:firstName,lastName:lastName,username:username,password:password};
   var error = '';
 
