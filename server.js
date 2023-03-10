@@ -20,7 +20,7 @@ app.use((req, res, next) => 
   next();
 });
 
-const url = 'mongodb+srv://SeanY:COP4331$@atlascluster.avo2ye5.mongodb.net/?retryWrites=true&w=majority';
+  const url = 'mongodb+srv://SeanY:COP4331$@atlascluster.avo2ye5.mongodb.net/?retryWrites=true&w=majority';
   const MongoClient = require("mongodb").MongoClient;
   const client = new MongoClient(url);
   client.connect(console.log("mongodb connected"));
