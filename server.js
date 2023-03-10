@@ -27,8 +27,6 @@ app.use((req, res, next) => 
 
   app.post('/api/login', async (req, res, next) => 
   {
-    // incoming: login, password
-    // outgoing: id, firstName, lastName, error
       
    var error = '';
   
@@ -69,8 +67,6 @@ app.use((req, res, next) => 
   {
     error = e.toString();
   }
-
-  //
 
   var ret = { error: error };
   res.status(200).json(ret);
