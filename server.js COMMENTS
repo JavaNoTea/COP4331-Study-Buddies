@@ -20,19 +20,23 @@ app.use((req, res, next) => 
   next();
 });
 
+  // access the studybuddy project database from mongodb
   const url = 'mongodb+srv://SeanY:COP4331$@atlascluster.avo2ye5.mongodb.net/?retryWrites=true&w=majority';
   const MongoClient = require("mongodb").MongoClient;
   const client = new MongoClient(url);
   client.connect(console.log("mongodb connected"));
 
-  app.post('/api/login', async (req, res, next) => 
-  {
+// login API
+app.post('/api/login', async (req, res, next) => 
+{
       
    var error = '';
   
+    // should be changed to "username" not login *** FIX ME ***
     const { login, password } = req.body;
   
     const db = client.db("StudyBuddy");
+    // should be changed to "username" not login *** FIX ME ***
     const results = await db.collection('Users').find({login:login,password:password}).toArray();
   
     var id = -1;
@@ -48,13 +52,16 @@ app.use((req, res, next) => 
   
     var ret = { id:id, firstName:fn, lastName:ln, error:''};
     res.status(200).json(ret);
-  });
+});
 
-  app.post('/api/register', async (req, res, next) =>
+// register API
+app.post('/api/register', async (req, res, next) =>
 {
-	
+
+  // missing: major & email to match database *** FIX ME ***
   const { firstName, lastName, username, password} = req.body;
 
+  // missing: major & email to match database *** FIX ME ***
   const newUser = {firstName:firstName,lastName:lastName,username:username,password:password};
   var error = '';
 
